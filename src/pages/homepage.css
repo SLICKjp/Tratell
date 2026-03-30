@@ -1,0 +1,32 @@
+.homepage-container
+{
+    height: 90vh;
+    background-image: url('../assets/hero/heroimg.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero-img-container
+{
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.hero-text-container
+{ 
+    height: 100%;
+    position: relative;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-text-title
+{
+    font-size:96px;
+}
+.hero-text-subtitle
+{
+    font-size: 32px;
+}
