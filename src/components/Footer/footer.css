@@ -1,0 +1,30 @@
+.footer-container
+{
+    
+    background-image: url("../../assets/footer/footer_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 320px;
+}
+.footer-above
+{
+    display: flex;
+    justify-content: space-around;
+    padding-top:20px;
+}
+.footer-aboutus-text
+{
+    width:209px;
+    font-size: 12px;
+}
+.footer-contact-text
+{
+    width: 196px;
+    font-size: 12px;
+}
+.footer-bottom
+{
+    text-align: center;
+    color: white;
+    margin-top:150px;
+}

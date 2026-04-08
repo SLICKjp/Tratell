@@ -1,4 +1,5 @@
 
+import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar'
 
 import './homepage.css';
@@ -12,7 +13,7 @@ const HomePage = () => {
             <h2 className='hero-text-title'>TRATELL</h2>
             <p className='hero-text-subtitle'>Tell Your Travel Story</p>
         </div>                              
-        
+        <Footer/>
         </div>
     )
 }
