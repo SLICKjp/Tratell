@@ -5,7 +5,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 320px;
-}
+    font-family:'Lato';}
 .footer-above
 {
     display: flex;
