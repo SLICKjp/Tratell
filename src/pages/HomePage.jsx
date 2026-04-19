@@ -1,4 +1,5 @@
 
+import FeaturedStays from '../components/FeaturedStay/FeaturedStays';
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar'
 
@@ -12,7 +13,8 @@ const HomePage = () => {
         <div className="hero-text-container">
             <h2 className='hero-text-title'>TRATELL</h2>
             <p className='hero-text-subtitle'>Tell Your Travel Story</p>
-        </div>                              
+        </div>  
+        <FeaturedStays/>                            
         <Footer/>
         </div>
     )

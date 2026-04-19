@@ -1,0 +1,61 @@
+.featured-stays-title-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* added */
+    margin-bottom: 30px; /* added */
+}
+
+.primary-text,
+.secondary-text {
+    font-family: 'TratellFont';
+}
+
+.primary-text {
+    color: #A60807;
+}
+
+.featured-stays-body {
+    font-family: 'Lato';
+    font-size: 14px;
+    width: 300px;
+}
+
+/* Arrows (added) */
+.slider-arrows {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.slider-arrows span {
+    margin: 0 10px;
+}
+
+/* Slider */
+.img-slider {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Side Images */
+.side-img {
+    width: 180px; /* slightly reduced */
+    height: 280px;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+/* Main Image */
+.main-img {
+    transform: scale(1.05); /* added for emphasis */
+}
+
+.main-img img {
+    width: 450px; /* slightly increased */
+    height: 320px;
+    object-fit: cover;
+}
