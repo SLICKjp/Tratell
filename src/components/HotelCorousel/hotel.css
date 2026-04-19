@@ -1,0 +1,177 @@
+.carousel-container{
+    min-height: 500px ;
+    width: 100%;
+    margin: 50px 0px;
+    font-family: Lato;
+    /* padding: 0 10%; */
+}
+
+.carousel-title-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+    padding: 0 10%;
+    
+}
+
+.carousel-title{
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    font-family: 'TratellFont';
+}
+
+.title-text{
+    font-size: 24px;
+}
+
+.carousel-hotel-list{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 25px;
+    /*  */
+}
+
+.hotel-ticket-container {
+    width: 100%;
+    overflow: hidden;
+    /* padding: 0 20px; */
+    /* creates 20px side visibility */
+    box-sizing: border-box;
+}
+
+.hotel-ticket-carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.hotel-ticket {
+    width: 70%;
+    height: 400px;
+    border: 2px solid #A60807;
+    flex-shrink: 0;
+    /* margin: 25px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* important */
+}
+
+.hotel-list-name.active {
+    font-weight: bold;
+    color: #A60807;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #ccc;
+    margin: 0 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.dot.active {
+    width: 20px;
+    background: #A60807;
+}
+
+.hotel-image{
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ticket-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 90%;
+    /* background-color: #A60807; */
+    width: 60%;
+    padding: 20px;
+    font-family: Lato;
+}
+
+.hotel-ticket.active{
+    background-color: #A60807;
+    border: 0px;
+    color: #FFF9EB;
+}
+
+.hotel-title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket-hotelName{
+    font-size:24px;
+}
+
+.ticket-hotelPrice{
+    font-size: 16px;
+    padding: 7px;
+    border: 2px solid #A60807;
+    border-radius: 20px;
+}
+
+.hotel-ticket.active .ticket-hotelPrice{
+    border: 2px solid #FFF9EB ;
+}
+.hotel-text{
+    width: 90%;
+    font-size: 20px;
+    /* color: #FFFBF5; */
+    color: #141414;
+    line-height: 1.3em;
+}
+
+.hotel-ticket.active .hotel-text{
+    color: #fffbf5;
+}
+
+.hotelBookBtn{
+    width: 133;
+        height: 48;
+        gap: 8px;
+        angle: 0 deg;
+        opacity: 1;
+        padding-top: 12px;
+        padding-right: 20px;
+        padding-bottom: 12px;
+        padding-left: 20px;
+        border-radius: 50px;
+        background-color: #FFF9EB;
+        border: 0px;
+        color: #141414;
+        font-family: Lato;
+            font-weight: 500;
+            font-style: Medium;
+            font-size: 20px;
+            leading-trim: NONE;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-align: center;
+            vertical-align: middle;
+}
+
+
+.property-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
