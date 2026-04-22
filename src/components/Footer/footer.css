@@ -16,15 +16,34 @@
 {
     width:209px;
     font-size: 12px;
+    margin-top: 3px;
 }
 .footer-contact-text
 {
     width: 196px;
     font-size: 12px;
+    margin-top:3px;
+}
+.footer-contact-no,.footer-contact-email
+{
+    font-size: 12px;
+}
+.footer-contact-no
+{
+    margin:3px 0px 3px 0px;
 }
 .footer-bottom
 {
     text-align: center;
     color: white;
     margin-top:150px;
+}
+.footer-column-header
+{
+    font-size: 14px;
+}
+li
+{
+  font-size: 12px;
+  margin: 4px 0px 0px 0px;
 }
