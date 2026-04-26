@@ -45,16 +45,20 @@ const HotelCarousel = () => {
 
 	const realIndex = (index - 1 + hotelList.length) % hotelList.length;
 
-	// measure distance between items
 	const measureWidth = () => {
 		if (carouselRef.current) {
 			const items = carouselRef.current.children;
 
-			if (items.length > 1) {
-				const first = items[0].getBoundingClientRect();
-				const second = items[1].getBoundingClientRect();
+			if (items.length > 0) {
+				const first = items[0];
+				const style = window.getComputedStyle(first);
 
-				setItemWidth(second.left - first.left);
+				const width = first.offsetWidth;
+				const gap = parseFloat(
+					window.getComputedStyle(carouselRef.current).gap || 0,
+				);
+
+				setItemWidth(width + gap); // ✅ correct step size
 			}
 		}
 	};
@@ -129,7 +133,7 @@ const HotelCarousel = () => {
 					className="hotel-ticket-carousel"
 					animate={{
 						x: itemWidth
-							? `calc(50% - ${index * itemWidth}px - ${itemWidth / 2}px)`
+							? `calc(50% - ${itemWidth * index}px - ${itemWidth / 2}px)`
 							: 0,
 					}}
 					transition={{
