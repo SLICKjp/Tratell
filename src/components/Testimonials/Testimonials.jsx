@@ -6,19 +6,19 @@ import quote from "../../assets/testimonial/quote.png";
 const testimonials = [
 	{
 		name: "Ramlata Agarwal",
-		role: "Traveler",
+		role: "Traveller",
 		text: "Amazing area of the hotel with a superb garden, great service by the staff and are very very co-operative. The rooms are quite comfortable and affordable. The food is quite good too. Overall, this hotel exceeded our expectations. Highly recommended for a mid-budget staycation.",
 		avatar: "https://i.pravatar.cc/100?img=1",
 	},
 	{
 		name: "Amit Sharma",
-		role: "Traveler",
+		role: "Traveller",
 		text: "Beautiful experience overall. The ambiance and service made our trip memorable. Would definitely visit again.",
 		avatar: "https://i.pravatar.cc/100?img=2",
 	},
 	{
 		name: "Sneha Kapoor",
-		role: "Traveler",
+		role: "Traveller",
 		text: "Loved the peaceful environment and attention to detail. Perfect place to relax and unwind.",
 		avatar: "https://i.pravatar.cc/100?img=3",
 	},

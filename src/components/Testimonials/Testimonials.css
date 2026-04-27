@@ -1,7 +1,7 @@
 .testimonial-container {
     text-align: center;
     padding: 60px 20px;
-    font-family: "Georgia", serif;
+    font-family:'Lato';
 }
 
 .testimonial-heading {
@@ -75,6 +75,7 @@
     font-size: 14px;
     color: #888;
     font-style: italic;
+    margin-top: 5px;
 }
 
 .testimonial-avatars {
