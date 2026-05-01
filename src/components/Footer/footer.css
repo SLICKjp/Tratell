@@ -42,8 +42,13 @@
 {
     font-size: 14px;
 }
-li
+.footer-k li
 {
   font-size: 12px;
   margin: 4px 0px 0px 0px;
+}
+.footer-j li
+{
+   font-size: 12px;
+   margin: 4px 0px 0px 0px;
 }
