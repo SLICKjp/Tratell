@@ -10,7 +10,7 @@ const Footer = () => {
             </div>
             <div>
                 <h3 className='footer-column-header'>Tratell</h3>
-                <ul className='footer-k'>
+                <ul className='footer-company-links'>
                     <li>About Us</li>
                     <li>Our Offer</li>
                     <li>Customer Protection</li>
@@ -19,7 +19,7 @@ const Footer = () => {
             </div>
             <div>
                 <h3 className='footer-column-header'>Helpful Links</h3>
-                <ul className='footer-j'>
+                <ul className='footer-legal-links'>
                     <li>Privacy Policy</li>
                     <li>Terms and Conditions</li>
                     <li>Disclaimer</li>

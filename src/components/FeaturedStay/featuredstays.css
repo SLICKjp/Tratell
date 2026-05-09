@@ -1,61 +1,120 @@
 .featured-stays-title-container {
     display: flex;
-    justify-content: space-around;
-    align-items: center; /* added */
-    margin-bottom: 30px; /* added */
+    justify-content:space-between;
+    align-items: center;
 }
 
 .primary-text,
 .secondary-text {
     font-family: 'TratellFont';
+    font-size: 48px;
 }
 
 .primary-text {
     color: #A60807;
 }
 
+
+.featured-stays-title
+{
+    margin-left: 100px;
+}
 .featured-stays-body {
     font-family: 'Lato';
-    font-size: 14px;
-    width: 300px;
+    font-size:19px;
+    width: 350px;
+    margin-right:100px;
 }
 
-/* Arrows (added) */
 .slider-arrows {
     text-align: center;
     margin: 20px 0;
     font-size: 22px;
     cursor: pointer;
+    color: #A60807;
 }
 
 .slider-arrows span {
     margin: 0 10px;
 }
 
-/* Slider */
-.img-slider {
+
+.slider-window {
+    overflow: hidden;
+    width: 100%;
+    padding: 40px calc((100% - 450px) / 2);
+}
+
+.slider-track {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
-/* Side Images */
-.side-img {
-    width: 180px; /* slightly reduced */
-    height: 280px;
-    object-fit: cover;
+
+.slide {
+    min-width: 450px;
+    height: 400px;
+    position: relative;
     opacity: 0.4;
+    transform: scale(0.92);
+    transition: all 0.4s ease;
 }
 
-/* Main Image */
-.main-img {
-    transform: scale(1.05); /* added for emphasis */
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1.08);
+    z-index: 2;
 }
 
-.main-img img {
-    width: 450px; /* slightly increased */
-    height: 320px;
+
+.slide img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    border-radius: 14px;
+}
+
+
+.slide:not(.active) {
+    filter: brightness(0.6);
+}
+
+
+.hotel-details {
+    position: absolute;
+    bottom: 30px;
+    left: 15px;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hotel-name {
+    font-family: 'TratellFont';
+    font-size: 25px;
+}
+
+.hotel-type {
+    font-family: 'Lato';
+    font-size: 12px;
+}
+
+.hotel-description {
+    width: 300px;
+    font-family: 'Lato';
+}
+@media screen and (min-width: 1540px) {
+    
+  .featured-stays-title
+{
+    margin-left:120px;
+}
+.featured-stays-body
+{
+    margin-right: 120px;
+}
+
 }

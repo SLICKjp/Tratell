@@ -1,11 +1,13 @@
 .homepage-container
 {
     height:100vh;
-    background-image: url('../../assets/hero/heroimg.png');
+     background:
+    linear-gradient(rgba(255, 251, 245, 0.2), rgba(255, 251, 245, 0.2)),
+    url('../../assets/hero/heroimg.png');
     background-size: cover;
     background-position: center;
     position: relative;
-    background-color: #FFFBF5;
+   
 }
 .hero-img-container
 {
