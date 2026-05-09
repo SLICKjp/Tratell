@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import './featuredstays.css';
 
 import Hotel from "../../assets/slider/hotel.png";
 import Hero from "../../assets/hero/heroimg.png";
 import Footer from "../../assets/footer/footer_bg.png";
+
+import arrow_left from "../../assets/slider/arrow_left.png";
+import arrow_right from "../../assets/slider/arrow_right.png";
 
 const slides = [
   {
@@ -33,67 +36,141 @@ const slides = [
   }
 ];
 
+
+const repeatedSlides = Array(200)
+  .fill(slides)
+  .flat();
+
+const middleIndex =
+  Math.floor(repeatedSlides.length / 2);
+
 const FeaturedStays = () => {
-  const [index, setIndex] = useState(1);
+
+  const [index, setIndex] = useState(middleIndex);
+
+
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % slides.length);
+    setIndex((prev) => prev + 1);
   };
 
   const prevSlide = () => {
-    setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    setIndex((prev) => prev - 1);
+  };
+
+  /* reset far before edges */
+  const handleAnimationComplete = () => {
+
+    if (
+      index < slides.length * 10 ||
+      index >
+      repeatedSlides.length - (slides.length * 10)
+    ) {
+
+      setIndex(middleIndex);
+
+    }
+
   };
 
   return (
+
     <section className='featured-stays-container'>
 
-
+      {/* TITLE */}
       <div className="featured-stays-title-container">
+
         <div className="featured-stays-title">
+
           <h1>
-            <span className="primary-text">Handpicked Stays</span><br />
-            <span className="secondary-text">For You</span>
+            <span className="primary-text">
+              Handpicked Stays
+            </span>
+
+            <br />
+
+            <span className="secondary-text">
+              For You
+            </span>
           </h1>
+
         </div>
 
         <div className="featured-stays-body">
           Stay with trusted hotels known for exceptional comfort, warm hospitality, and memorable experiences—carefully selected to make every journey feel special.
         </div>
+
       </div>
 
-   
+      {/* ARROWS */}
       <div className="slider-arrows">
-        <span onClick={prevSlide}>←</span>
-        <span onClick={nextSlide}>→</span>
+
+        <span onClick={prevSlide}>
+          <img src={arrow_left} alt="" />
+        </span>
+
+        <span onClick={nextSlide}>
+          <img src={arrow_right} alt="" />
+        </span>
+
       </div>
 
-   
+      {/* SLIDER */}
       <div className="slider-window">
+
         <motion.div
           className="slider-track"
+
           animate={{
             x: `calc(50% - ${index * 480}px - 225px)`
           }}
-          transition={{
-            type: "spring",
-            stiffness: 90,
-            damping: 25
-          }}
+
+          transition={
+            hasMounted
+              ? {
+                type: "spring",
+                stiffness: 90,
+                damping: 25
+              }
+              : {
+                duration: 0
+              }
+          }
+
+          onAnimationComplete={handleAnimationComplete}
         >
-          {slides.map((slide, i) => (
+
+          {repeatedSlides.map((slide, i) => (
+
             <div
-              className={`slide ${i === index ? "active" : ""}`}
-              key={slide.id}
+              className={`slide ${i === index ? "active" : ""
+                }`}
+              key={`${slide.id}-${i}`}
             >
+
               <img src={slide.image} alt="" />
 
               {i === index && (
+
                 <div className="hotel-details">
-                  <h3 className="hotel-name">{slide.title}</h3>
-                  <h4 className="hotel-type">{slide.subtitle}</h4>
+
+                  <h3 className="hotel-name">
+                    {slide.title}
+                  </h3>
+
+                  <h4 className="hotel-type">
+                    {slide.subtitle}
+                  </h4>
+
                   <p className="hotel-description">
                     {slide.description}
                   </p>
+
                 </div>
               )}
             </div>
@@ -102,6 +179,7 @@ const FeaturedStays = () => {
       </div>
 
     </section>
+
   );
 };
 

@@ -1,95 +1,122 @@
+.featured-stays-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* TITLE */
 .featured-stays-title-container {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 40px;
+}
+.featured-stays-title
+{
+    margin-left: 100px;
 }
 
 .primary-text,
 .secondary-text {
     font-family: 'TratellFont';
-    font-size: 48px;
+     font-size: 48px;
 }
 
 .primary-text {
     color: #A60807;
 }
 
-
-.featured-stays-title
-{
-    margin-left: 100px;
-}
 .featured-stays-body {
     font-family: 'Lato';
-    font-size:19px;
+    font-size: 19px;
     width: 350px;
+    line-height: 1.6;
     margin-right:100px;
 }
 
+/* ARROWS */
 .slider-arrows {
-    text-align: center;
-    margin: 20px 0;
-    font-size: 22px;
-    cursor: pointer;
-    color: #A60807;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
 }
 
 .slider-arrows span {
-    margin: 0 10px;
+    cursor: pointer;
 }
 
-
+/* WINDOW */
 .slider-window {
     overflow: hidden;
-    width: 100%;
-    padding: 40px calc((100% - 450px) / 2);
+
+    width: min(1470px, 100%);
+
+    margin: auto;
+
+    padding: 40px 0;
 }
 
+/* TRACK */
 .slider-track {
     display: flex;
+    align-items: center;
+
     gap: 30px;
 }
 
-
+/* SLIDES */
 .slide {
     min-width: 450px;
     height: 400px;
-    position: relative;
-    opacity: 0.4;
-    transform: scale(0.92);
-    transition: all 0.4s ease;
-}
 
+    position: relative;
+
+    opacity: 0.4;
+
+    transform: scale(0.92);
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
 
 .slide.active {
     opacity: 1;
-    transform: scale(1.08);
+
+    transform: scale(1.05);
+
     z-index: 2;
 }
-
 
 .slide img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     border-radius: 14px;
 }
-
 
 .slide:not(.active) {
     filter: brightness(0.6);
 }
 
-
+/* TEXT */
 .hotel-details {
     position: absolute;
+
     bottom: 30px;
-    left: 15px;
+    left: 20px;
+
     color: white;
 
     display: flex;
     flex-direction: column;
-    gap: 5px;
+
+    gap: 6px;
 }
 
 .hotel-name {
@@ -104,7 +131,10 @@
 
 .hotel-description {
     width: 300px;
+
     font-family: 'Lato';
+    font-size: 14px;
+    line-height: 1.5;
 }
 @media screen and (min-width: 1540px) {
     
@@ -114,7 +144,7 @@
 }
 .featured-stays-body
 {
-    margin-right: 120px;
+    margin-right:120px;
 }
 
 }
