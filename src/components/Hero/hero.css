@@ -1,7 +1,7 @@
 .homepage-container
 {
     height:100vh;
-     background:
+    background:
     linear-gradient(rgba(255, 251, 245, 0.2), rgba(255, 251, 245, 0.2)),
     url('../../assets/hero/heroimg.png');
     background-size: cover;
@@ -45,14 +45,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap:32px;
   padding: 20px 25px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
   border-radius:20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  width:650px;
+  width:1080px;
   margin: 0 auto;
 }
 
@@ -61,6 +61,7 @@
   flex-direction: column;
   color: white;
   font-size: 14px;
+  width: 196px;
 }
 
 .field label {

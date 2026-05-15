@@ -1,6 +1,8 @@
 .featured-stays-container {
     width: 100%;
     overflow: hidden;
+     padding:60px 0px;
+
 }
 
 /* TITLE */
@@ -33,15 +35,12 @@
     margin-right:100px;
 }
 
-/* ARROWS */
+
 .slider-arrows {
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 20px;
-
-    margin-bottom: 30px;
 }
 
 .slider-arrows span {
@@ -51,33 +50,25 @@
 /* WINDOW */
 .slider-window {
     overflow: hidden;
-
     width: min(1470px, 100%);
-
     margin: auto;
-
     padding: 40px 0;
 }
 
-/* TRACK */
+
 .slider-track {
     display: flex;
     align-items: center;
-
     gap: 30px;
 }
 
-/* SLIDES */
+
 .slide {
     min-width: 450px;
     height: 400px;
-
     position: relative;
-
     opacity: 0.4;
-
     transform: scale(0.92);
-
     transition:
         transform 0.4s ease,
         opacity 0.4s ease;
@@ -85,18 +76,14 @@
 
 .slide.active {
     opacity: 1;
-
     transform: scale(1.05);
-
     z-index: 2;
 }
 
 .slide img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     border-radius: 14px;
 }
 
@@ -104,24 +91,21 @@
     filter: brightness(0.6);
 }
 
-/* TEXT */
+
 .hotel-details {
     position: absolute;
-
     bottom: 30px;
     left: 20px;
-
     color: white;
-
     display: flex;
     flex-direction: column;
-
     gap: 6px;
 }
 
 .hotel-name {
     font-family: 'TratellFont';
     font-size: 25px;
+   
 }
 
 .hotel-type {
@@ -131,7 +115,6 @@
 
 .hotel-description {
     width: 300px;
-
     font-family: 'Lato';
     font-size: 14px;
     line-height: 1.5;

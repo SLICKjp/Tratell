@@ -63,7 +63,7 @@ const FeaturedStays = () => {
     setIndex((prev) => prev - 1);
   };
 
-  /* reset far before edges */
+
   const handleAnimationComplete = () => {
 
     if (
@@ -82,7 +82,7 @@ const FeaturedStays = () => {
 
     <section className='featured-stays-container'>
 
-      {/* TITLE */}
+
       <div className="featured-stays-title-container">
 
         <div className="featured-stays-title">
@@ -107,7 +107,7 @@ const FeaturedStays = () => {
 
       </div>
 
-      {/* ARROWS */}
+
       <div className="slider-arrows">
 
         <span onClick={prevSlide}>
@@ -120,7 +120,7 @@ const FeaturedStays = () => {
 
       </div>
 
-      {/* SLIDER */}
+
       <div className="slider-window">
 
         <motion.div
