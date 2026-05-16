@@ -4,8 +4,10 @@ nav
     align-items: center;
     justify-content:space-around;
     padding-top: 25px;
-    color: rgb(255, 255, 255);
+    color: rgb(179, 178, 178);
     font-family:'Lato', sans-serif;
+    position: relative;
+    z-index: 10;
     
 }
 .nav-links-one
@@ -33,3 +35,9 @@ li
   font-size: 16px;
 }
 
+.nav-links-one li:hover,
+.nav-links-two li:hover
+{
+    cursor: pointer;
+       color: rgb(255, 255, 255);
+}

@@ -97,3 +97,101 @@
   background: white;
   color: black;
 }
+
+
+
+
+/* ───────── TABLETS ───────── */
+
+@media (max-width: 1024px)
+{
+    .hero-text-title
+    {
+        font-size: 72px;
+    }
+
+    .hero-text-subtitle
+    {
+        font-size: 26px;
+    }
+
+    .search-container
+    {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .search-box
+    {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .field
+    {
+        width: 45%;
+    }
+
+    .search-btn
+    {
+        width: 100%;
+    }
+}
+
+
+/* ───────── MOBILE ───────── */
+
+@media (max-width: 640px)
+{
+    .homepage-container
+    {
+        min-height: 100vh;
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    .hero-text-container
+    {
+        padding-top: 80px;
+        justify-content: flex-start;
+    }
+
+    .hero-text-title
+    {
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .hero-text-subtitle
+    {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .search-container
+    {
+        width: 100%;
+        padding: 24px 16px;
+    }
+
+    .search-box
+    {
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px 18px;
+    }
+
+    .field
+    {
+        width: 100%;
+    }
+
+    .search-btn
+    {
+        width: 100%;
+    }
+}
