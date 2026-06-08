@@ -58,7 +58,7 @@ const HotelCarousel = () => {
 					window.getComputedStyle(carouselRef.current).gap || 0,
 				);
 
-				setItemWidth(width + gap); // ✅ correct step size
+				setItemWidth(width + gap);
 			}
 		}
 	};

@@ -38,6 +38,7 @@
     max-width: 700px;
     margin: auto;
     position: relative;
+    height: 150px;
 }
 
 .quote {
