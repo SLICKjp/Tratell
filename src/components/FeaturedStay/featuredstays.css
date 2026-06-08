@@ -131,3 +131,38 @@
 }
 
 }
+/* 
+.slide::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(to top,
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.2),
+            transparent);
+
+    opacity: 0;
+
+    transition: opacity .4s ease;
+
+    pointer-events: none;
+}
+
+.slide.active::after {
+    opacity: 1;
+}
+
+.slide {
+    transition:
+        transform .4s ease,
+        opacity .4s ease;
+}
+
+.slide.active:hover {
+    transform: scale(1.08);
+} */

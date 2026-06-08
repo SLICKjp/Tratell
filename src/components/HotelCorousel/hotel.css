@@ -179,3 +179,38 @@
     height: 100%;
     object-fit: cover;
 }
+
+.hotel-ticket {
+    transition:
+        box-shadow .4s ease;
+}
+
+.hotel-ticket.active {
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .12);
+}
+
+.hotel-ticket.active:hover {
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, .18);
+}
+
+.property-img {
+    transition:
+        transform .6s ease;
+}
+
+.hotel-list-name {
+    cursor: pointer;
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+.hotel-list-name:hover {
+    transform: translateY(-2px);
+}
+
+.hotel-list-name.active {
+    transform: translateY(-3px);
+}

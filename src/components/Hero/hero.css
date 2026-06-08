@@ -195,3 +195,32 @@
         width: 100%;
     }
 }
+.homepage-container {
+    overflow: hidden;
+}
+
+.hero-text-title,
+.hero-text-subtitle,
+.search-container {
+    will-change: transform;
+}
+
+.search-box {
+    will-change: transform;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.search-btn {
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.search-btn:hover {
+    box-shadow:
+        0 10px 25px rgba(255, 255, 255, 0.15);
+}

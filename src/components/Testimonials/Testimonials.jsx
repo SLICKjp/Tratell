@@ -2,8 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Testimonials.css";
 import quote from "../../assets/testimonial/quote.png";
-import arrow_left from "../../assets/slider/arrow_left.png"
-import arrow_right from "../../assets/slider/arrow_right.png"
+import arrow_left from "../../assets/slider/arrow_left.png";
+import arrow_right from "../../assets/slider/arrow_right.png";
 
 const testimonials = [
 	{
@@ -48,25 +48,114 @@ export default function Testimonials() {
 
 	return (
 		<div className="testimonial-container">
-			<h2 className="testimonial-heading">
+			<motion.h2
+				className="testimonial-heading"
+				initial={{
+					opacity: 0,
+					filter: "blur(10px)",
+					letterSpacing: "8px",
+				}}
+				whileInView={{
+					opacity: 1,
+					filter: "blur(0px)",
+					letterSpacing: "0px",
+				}}
+				viewport={{
+					once: true,
+					amount: 0.7,
+				}}
+				transition={{
+					duration: 1.4,
+					ease: [0.22, 1, 0.36, 1],
+				}}
+			>
 				Travel Stories with <span style={{ color: "#A60807" }}>Tratell</span>
-			</h2>
-			<p className="testimonial-sub">
+			</motion.h2>
+			<motion.p
+				className="testimonial-sub"
+				initial={{
+					opacity: 0,
+					y: 20,
+				}}
+				whileInView={{
+					opacity: 1,
+					y: 0,
+				}}
+				viewport={{
+					once: true,
+				}}
+				transition={{
+					delay: 0.3,
+					duration: 0.8,
+				}}
+			>
 				Experiences that reflect the heart of every journey.
-			</p>
+			</motion.p>
 
 			<div className="testimonial-arrows">
-				<button onClick={() => paginate(-1)}><img src={arrow_left} alt="" srcset="" /></button>
-				<button onClick={() => paginate(1)}><img src={arrow_right} alt="" srcset="" /></button>
+				<button onClick={() => paginate(-1)}>
+					<img src={arrow_left} alt="" srcset="" />
+				</button>
+				<button onClick={() => paginate(1)}>
+					<img src={arrow_right} alt="" srcset="" />
+				</button>
 			</div>
 
-			<div className="testimonial-content">
-				<span className="quote left">
+			<motion.div
+				className="testimonial-content"
+				initial={{
+					opacity: 0,
+					y: 40,
+				}}
+				whileInView={{
+					opacity: 1,
+					y: 0,
+				}}
+				viewport={{
+					once: true,
+					amount: 0.4,
+				}}
+				transition={{
+					duration: 1,
+					ease: [0.22, 1, 0.36, 1],
+				}}
+			>
+				<motion.span
+					className="quote left"
+					initial={{
+						opacity: 0,
+						scale: 0.8,
+					}}
+					whileInView={{
+						opacity: 1,
+						scale: 1,
+					}}
+					viewport={{ once: true }}
+					transition={{
+						delay: 0.5,
+						duration: 1,
+					}}
+				>
 					<img src={quote} />
-				</span>
-				<span className="quote right">
+				</motion.span>
+				<motion.span
+					className="quote right"
+					initial={{
+						opacity: 0,
+						scale: 0.8,
+					}}
+					whileInView={{
+						opacity: 1,
+						scale: 1,
+					}}
+					viewport={{ once: true }}
+					transition={{
+						delay: 0.7,
+						duration: 1,
+					}}
+				>
 					<img src={quote} />
-				</span>
+				</motion.span>
 
 				<AnimatePresence custom={direction} mode="wait">
 					<motion.div
@@ -86,9 +175,26 @@ export default function Testimonials() {
 						</div>
 					</motion.div>
 				</AnimatePresence>
-			</div>
+			</motion.div>
 
-			<div className="testimonial-avatars">
+			<motion.div
+				className="testimonial-avatars"
+				initial={{
+					opacity: 0,
+					y: 15,
+				}}
+				whileInView={{
+					opacity: 1,
+					y: 0,
+				}}
+				viewport={{
+					once: true,
+				}}
+				transition={{
+					delay: 0.8,
+					duration: 0.8,
+				}}
+			>
 				{testimonials.map((item, i) => (
 					<img
 						key={i}
@@ -97,7 +203,7 @@ export default function Testimonials() {
 						className={i === index ? "active" : ""}
 					/>
 				))}
-			</div>
+			</motion.div>
 		</div>
 	);
 }

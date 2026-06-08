@@ -50,7 +50,7 @@
 .quote.left {
     left: -160px;
     top: -20px;
-    transform: rotate(180deg);
+    transform: rotate(180deg) !important;
 }
 
 .quote.right {
@@ -99,4 +99,33 @@
     opacity: 1;
     transform: scale(1.2);
     border: 2px solid #000;
+}
+
+.testimonial-heading,
+.testimonial-sub {
+    will-change: transform;
+}
+
+.testimonial-arrows button {
+    transition:
+        transform .3s ease,
+        filter .3s ease;
+}
+
+.testimonial-arrows button:hover {
+    transform: scale(1.15);
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(166,8,7,.25)
+        );
+}
+
+.testimonial-content {
+    transition:
+        transform .4s ease;
+}
+
+.testimonial-content:hover {
+    transform: translateY(-3px);
 }

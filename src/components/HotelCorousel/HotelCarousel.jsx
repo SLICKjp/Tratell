@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./hotel.css";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import img from "../../assets/carousel/resort.jpg";
 
 const HotelCarousel = () => {
@@ -98,10 +98,46 @@ const HotelCarousel = () => {
 	return (
 		<div className="carousel-container">
 			<div className="carousel-title-container">
-				<div className="carousel-title">
-					Your <span style={{ color: "#A60807" }}> Next Getaway </span> Starts
-					Here
-				</div>
+				<motion.div
+					className="carousel-title"
+					initial={{
+						opacity: 0,
+						filter: "blur(12px)",
+						letterSpacing: "10px",
+					}}
+					whileInView={{
+						opacity: 1,
+						filter: "blur(0px)",
+						letterSpacing: "0px",
+					}}
+					viewport={{
+						once: true,
+						amount: 0.6,
+					}}
+					transition={{
+						duration: 1.4,
+						ease: [0.22, 1, 0.36, 1],
+					}}
+				>
+					Your{" "}
+					<motion.span
+						style={{ color: "#A60807", display: "inline-block" }}
+						initial={{
+							opacity: 0,
+						}}
+						whileInView={{
+							opacity: 1,
+						}}
+						viewport={{ once: true }}
+						transition={{
+							delay: 0.4,
+							duration: 0.8,
+						}}
+					>
+						Next Getaway
+					</motion.span>{" "}
+					Starts Here
+				</motion.div>
 				<div className="title-text">
 					Discover the latest travel experiences curated for you.
 				</div>
@@ -148,26 +184,79 @@ const HotelCarousel = () => {
 							key={i}
 							animate={{
 								scale: i === index ? 1 : 0.92,
-								opacity: i === index ? 1 : 0.5,
+								opacity: i === index ? 1 : 0.45,
+								y: i === index ? 0 : 12,
 							}}
-							transition={{ duration: 0.4 }}
+							transition={{
+								duration: 0.6,
+								ease: [0.22, 1, 0.36, 1],
+							}}
+							whileHover={
+								i === index
+									? {
+											y: -6,
+										}
+									: {}
+							}
 						>
 							<div className="hotel-image">
-								<img className="property-img" src={hotel.img} alt="" />
+								<motion.img
+									className="property-img"
+									src={hotel.img}
+									alt=""
+									initial={{ scale: 1.1 }}
+									animate={{
+										scale: i === index ? 1 : 1.05,
+									}}
+									transition={{
+										duration: 0.8,
+									}}
+								/>
 							</div>
 
-							<div className="ticket-text">
-								<div className="hotel-title">
-									<span className="ticket-hotelName">{hotel.hotelName}</span>
-									<span className="ticket-hotelPrice">
-										{hotel.price}/- per night
-									</span>
-								</div>
+							<AnimatePresence mode="wait">
+								<motion.div
+									className="ticket-text"
+									key={hotel.hotelName}
+									initial={{
+										opacity: 0,
+										y: 20,
+									}}
+									animate={{
+										opacity: 1,
+										y: 0,
+									}}
+									exit={{
+										opacity: 0,
+										y: 20,
+									}}
+									transition={{
+										duration: 0.5,
+									}}
+								>
+									<div className="hotel-title">
+										<span className="ticket-hotelName">{hotel.hotelName}</span>
+										<span className="ticket-hotelPrice">
+											{hotel.price}/- per night
+										</span>
+									</div>
 
-								<div className="hotel-text">{hotel.text}</div>
+									<div className="hotel-text">{hotel.text}</div>
 
-								<button className="hotelBookBtn">Book Now</button>
-							</div>
+									<motion.button
+										className="hotelBookBtn"
+										whileHover={{
+											scale: 1.04,
+											y: -2,
+										}}
+										whileTap={{
+											scale: 0.98,
+										}}
+									>
+										Book Now
+									</motion.button>
+								</motion.div>
+							</AnimatePresence>
 						</motion.div>
 					))}
 				</motion.div>

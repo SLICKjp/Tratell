@@ -60,3 +60,58 @@
 .service-icon{
     margin: 10px;
 }
+/* 
+.services-section {
+    overflow: hidden;
+}
+
+.service-main,
+.service-sub,
+.service {
+    will-change: transform;
+}
+
+.service {
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.service:hover {
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.service-icon {
+    will-change: transform;
+}
+
+.service-heading {
+    transition: color 0.3s ease;
+}
+
+.service:hover .service-heading {
+    color: #A60807;
+} */
+
+.service {
+    position: relative;
+    overflow: hidden;
+}
+
+.service::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity .4s ease;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(166, 8, 7, .08),
+            transparent 70%);
+}
+
+.service:hover::before {
+    opacity: 1;
+}
