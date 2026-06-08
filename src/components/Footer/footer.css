@@ -42,8 +42,86 @@
 {
     font-size: 14px;
 }
-li
+.footer-company-links li
 {
   font-size: 12px;
   margin: 4px 0px 0px 0px;
 }
+.footer-legal-links li
+{
+   font-size: 12px;
+   margin: 4px 0px 0px 0px;
+}
+
+/* ───────── TABLETS ───────── */
+
+@media (max-width: 1024px)
+{
+    .footer-container
+    {
+        height: auto;
+        padding-bottom: 30px;
+    }
+
+    .footer-above
+    {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 20px 40px 0px 40px;
+    }
+
+    .footer-above > div
+    {
+        width: 45%;
+    }
+
+    .footer-aboutus-text,
+    .footer-contact-text
+    {
+        width: 100%;
+    }
+
+    .footer-bottom
+    {
+        margin-top: 50px;
+    }
+}
+
+
+/* ───────── MOBILE ───────── */
+
+@media (max-width: 640px)
+{
+    .footer-container
+    {
+        height: auto;
+        padding-bottom: 25px;
+        background-position: center;
+    }
+
+    .footer-above
+    {
+        flex-direction: column;
+        gap: 24px;
+        padding: 20px;
+    }
+
+    .footer-above > div
+    {
+        width: 100%;
+    }
+
+    .footer-aboutus-text,
+    .footer-contact-text
+    {
+        width: 100%;
+    }
+
+    .footer-bottom
+    {
+        margin-top: 40px;
+        padding: 0px 20px;
+    }
+}
+

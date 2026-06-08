@@ -2,23 +2,25 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Testimonials.css";
 import quote from "../../assets/testimonial/quote.png";
+import arrow_left from "../../assets/slider/arrow_left.png"
+import arrow_right from "../../assets/slider/arrow_right.png"
 
 const testimonials = [
 	{
 		name: "Ramlata Agarwal",
-		role: "Traveler",
+		role: "Traveller",
 		text: "Amazing area of the hotel with a superb garden, great service by the staff and are very very co-operative. The rooms are quite comfortable and affordable. The food is quite good too. Overall, this hotel exceeded our expectations. Highly recommended for a mid-budget staycation.",
 		avatar: "https://i.pravatar.cc/100?img=1",
 	},
 	{
 		name: "Amit Sharma",
-		role: "Traveler",
+		role: "Traveller",
 		text: "Beautiful experience overall. The ambiance and service made our trip memorable. Would definitely visit again.",
 		avatar: "https://i.pravatar.cc/100?img=2",
 	},
 	{
 		name: "Sneha Kapoor",
-		role: "Traveler",
+		role: "Traveller",
 		text: "Loved the peaceful environment and attention to detail. Perfect place to relax and unwind.",
 		avatar: "https://i.pravatar.cc/100?img=3",
 	},
@@ -54,8 +56,8 @@ export default function Testimonials() {
 			</p>
 
 			<div className="testimonial-arrows">
-				<button onClick={() => paginate(-1)}>←</button>
-				<button onClick={() => paginate(1)}>→</button>
+				<button onClick={() => paginate(-1)}><img src={arrow_left} alt="" srcset="" /></button>
+				<button onClick={() => paginate(1)}><img src={arrow_right} alt="" srcset="" /></button>
 			</div>
 
 			<div className="testimonial-content">
