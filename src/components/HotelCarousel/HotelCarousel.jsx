@@ -51,7 +51,7 @@ const HotelCarousel = () => {
 
 			if (items.length > 0) {
 				const first = items[0];
-				const style = window.getComputedStyle(first);
+			
 
 				const width = first.offsetWidth;
 				const gap = parseFloat(

@@ -10,7 +10,7 @@ const Navbar = () => {
            <li>Customer Protection</li>
         </ul>
         <div className='navbar-logo'>
-            TRATTEL
+            TRATELL
         </div>
          <ul className='nav-links-two'>
            <li>Contact</li>

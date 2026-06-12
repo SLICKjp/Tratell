@@ -94,10 +94,10 @@ export default function Testimonials() {
 
 			<div className="testimonial-arrows">
 				<button onClick={() => paginate(-1)}>
-					<img src={arrow_left} alt="" srcset="" />
+					<img src={arrow_left} alt="" />
 				</button>
 				<button onClick={() => paginate(1)}>
-					<img src={arrow_right} alt="" srcset="" />
+					<img src={arrow_right} alt=""/>
 				</button>
 			</div>
 

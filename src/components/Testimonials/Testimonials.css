@@ -1,7 +1,11 @@
 .testimonial-container {
     text-align: center;
+   
     padding: 60px 20px;
     font-family:'Lato';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .testimonial-heading {
@@ -36,7 +40,7 @@
 
 .testimonial-content {
     max-width: 700px;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
     height: 150px;
 }

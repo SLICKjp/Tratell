@@ -1,7 +1,12 @@
 .featured-stays-container {
     width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
     overflow: hidden;
-     padding:60px 0px;
+    padding:60px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
@@ -51,22 +56,22 @@
 .slider-window {
     overflow: hidden;
     width: min(1470px, 100%);
-    margin: auto;
+    margin: 0 auto;
     padding: 40px 0;
 }
 
 
 .slider-track {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+    position: relative;
+    height: 400px;
 }
 
 
 .slide {
-    min-width: 450px;
+    position: absolute;
+    top: 0;
+    width: 450px;
     height: 400px;
-    position: relative;
     opacity: 0.4;
     transform: scale(0.92);
     transition:

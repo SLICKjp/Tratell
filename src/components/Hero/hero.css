@@ -1,6 +1,7 @@
 .homepage-container
 {
     height:100vh;
+    height:100dvh;
     background:
     linear-gradient(rgba(255, 251, 245, 0.2), rgba(255, 251, 245, 0.2)),
     url('../../assets/hero/heroimg.png');

@@ -1,8 +1,7 @@
 import FeaturedStays from "../../components/FeaturedStay/FeaturedStays.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import Hero from "../../components/Hero/Hero.jsx";
-import HotelCarousel from "../../components/HotelCorousel/HotelCarousel.jsx";
-import Navbar from "../../components/Navbar/Navbar.jsx";
+import HotelCarousel from "../../components/HotelCarousel/HotelCarousel.jsx";
 import Services from "../../components/Services/Services.jsx";
 import Testimonials from "../../components/Testimonials/Testimonials.jsx";
 

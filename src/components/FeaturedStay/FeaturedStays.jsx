@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-// import { motion } from "framer-motion";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./featuredstays.css";
 
@@ -35,35 +34,24 @@ const slides = [
 	},
 ];
 
-const repeatedSlides = Array(200).fill(slides).flat();
 
-const middleIndex = Math.floor(repeatedSlides.length / 2);
+const SLIDE_WIDTH = 480; 
+const HALF_WINDOW = 4; 
+
+// Maps any (possibly negative or huge) position to the matching real slide.
+const slideAt = (p) => slides[((p % slides.length) + slides.length) % slides.length];
 
 const FeaturedStays = () => {
-	const [index, setIndex] = useState(middleIndex);
+	const [index, setIndex] = useState(0);
 
-	const [hasMounted, setHasMounted] = useState(false);
+	const nextSlide = () => setIndex((prev) => prev + 1);
+	const prevSlide = () => setIndex((prev) => prev - 1);
 
-	useEffect(() => {
-		setHasMounted(true);
-	}, []);
-
-	const nextSlide = () => {
-		setIndex((prev) => prev + 1);
-	};
-
-	const prevSlide = () => {
-		setIndex((prev) => prev - 1);
-	};
-
-	const handleAnimationComplete = () => {
-		if (
-			index < slides.length * 10 ||
-			index > repeatedSlides.length - slides.length * 10
-		) {
-			setIndex(middleIndex);
-		}
-	};
+	
+	const positions = [];
+	for (let p = index - HALF_WINDOW; p <= index + HALF_WINDOW; p++) {
+		positions.push(p);
+	}
 
 	return (
 		<section className="featured-stays-container">
@@ -114,60 +102,58 @@ const FeaturedStays = () => {
 			<div className="slider-window">
 				<motion.div
 					className="slider-track"
+					initial={false}
 					animate={{
-						x: `calc(50% - ${index * 480}px - 225px)`,
+						x: `calc(50% - ${index * SLIDE_WIDTH}px - 225px)`,
 					}}
-					transition={
-						hasMounted
-							? {
-									type: "spring",
-									stiffness: 90,
-									damping: 25,
-								}
-							: {
-									duration: 0,
-								}
-					}
-					onAnimationComplete={handleAnimationComplete}
+					transition={{
+						type: "spring",
+						stiffness: 90,
+						damping: 25,
+					}}
 				>
-					{repeatedSlides.map((slide, i) => (
-						<div
-							className={`slide ${i === index ? "active" : ""}`}
-							key={`${slide.id}-${i}`}
-						>
-							<motion.img src={slide.image} alt="" />
+					{positions.map((p) => {
+						const slide = slideAt(p);
+						return (
+							<div
+								className={`slide ${p === index ? "active" : ""}`}
+								key={p}
+								style={{ left: `${p * SLIDE_WIDTH}px` }}
+							>
+								<motion.img src={slide.image} alt="" />
 
-							<AnimatePresence mode="wait">
-								{i === index && (
-									<motion.div
-										className="hotel-details"
-										key={slide.id}
-										initial={{
-											opacity: 0,
-											y: 20,
-										}}
-										animate={{
-											opacity: 1,
-											y: 0,
-										}}
-										exit={{
-											opacity: 0,
-											y: 20,
-										}}
-										transition={{
-											duration: 0.4,
-										}}
-									>
-										<h3 className="hotel-name">{slide.title}</h3>
+								<AnimatePresence mode="wait">
+									{p === index && (
+										<motion.div
+											className="hotel-details"
+											key={slide.id}
+											initial={{
+												opacity: 0,
+												y: 20,
+											}}
+											animate={{
+												opacity: 1,
+												y: 0,
+											}}
+											exit={{
+												opacity: 0,
+												y: 20,
+											}}
+											transition={{
+												duration: 0.4,
+											}}
+										>
+											<h3 className="hotel-name">{slide.title}</h3>
 
-										<h4 className="hotel-type">{slide.subtitle}</h4>
+											<h4 className="hotel-type">{slide.subtitle}</h4>
 
-										<p className="hotel-description">{slide.description}</p>
-									</motion.div>
-								)}
-							</AnimatePresence>
-						</div>
-					))}
+											<p className="hotel-description">{slide.description}</p>
+										</motion.div>
+									)}
+								</AnimatePresence>
+							</div>
+						);
+					})}
 				</motion.div>
 			</div>
 		</section>
